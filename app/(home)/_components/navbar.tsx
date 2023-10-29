@@ -33,7 +33,7 @@ const NavbarItem = ({ label, href }: NavbarItemProps) => {
       className={cn(
         "p-3 text-md font-semibold text-slate-500",
         isActive &&
-          "text-lg text-slate-800 border-red-400 w-full bg-red-200/20 md:border-b-4 md:border-r-0 border-r-4 md:w-auto md:bg-transparent"
+          "text-slate-800 border-red-400 w-full bg-red-200/20 md:border-b-4 md:border-r-0 border-r-4 md:w-auto md:bg-transparent"
       )}
     >
       {label}
