@@ -1,49 +1,27 @@
 "use client";
 
-import { useMediaQuery } from "usehooks-ts";
 import { Facebook, Instagram } from "lucide-react";
+
 import Image from "next/image";
+import qrCode from "@/public/qr-code.png";
+import yedab from "@/public/yedab.png";
+import ielts from "@/public/ielts.png";
+import pearson from "@/public/pearson.png";
 import Link from "next/link";
 
 import { Button } from "@/components/button";
 
 export const Footer = () => {
-  const isWebSize = useMediaQuery("(min-width: 768px)");
-
   return (
-    <footer className="flex flex-col bg-zinc-800 justify-center">
+    <footer className="flex flex-col bg-zinc-800 justify-center ">
       <div className="p-5 m-auto">
         <Button label="Contact us ->" href="contact-us" variant="light" type="button" />
       </div>
-      <div className="p-2 flex flex-col md:flex-row space-0  md:space-x-8 justify-center items-center bg-zinc-100">
-        <Image
-          src="/qr-code.png"
-          width={isWebSize ? 150 : 75}
-          height={isWebSize ? 150 : 75}
-          alt="QR CODE"
-          className="object-contain"
-        />
-        <Image
-          src="/yedab.png"
-          width={isWebSize ? 250 : 150}
-          height={isWebSize ? 100 : 75}
-          alt="YEDAB logo"
-          className="object-contain"
-        />
-        <Image
-          src="/ielts.png"
-          width={isWebSize ? 250 : 150}
-          height={isWebSize ? 100 : 75}
-          alt="IELTS logo"
-          className="object-contain"
-        />
-        <Image
-          src="/pearson.png"
-          width={isWebSize ? 250 : 150}
-          height={isWebSize ? 100 : 75}
-          alt="Pearson logo"
-          className="object-contain"
-        />
+      <div className="p-2 flex flex-col md:flex-row space-0  md:space-x-8 justify-center items-center bg-zinc-100 md:h-[200px]">
+        <Image src={qrCode} alt="QR CODE" className="h-[100px] md:h-[150px] w-auto" />
+        <Image src={yedab} alt="YEDAB logo" className="h-[100px] md:h-[200px] w-auto" />
+        <Image src={ielts} alt="IELTS logo" className="h-[100px] md:h-[200px] w-auto" />
+        <Image src={pearson} alt="Pearson logo" className="h-[100px] md:h-[200px] w-auto" />
       </div>
       <div className="flex flex-row justify-end p-2 pr-20 space-x-5">
         <Link href="https://www.instagram.com/connect.istanbul">
