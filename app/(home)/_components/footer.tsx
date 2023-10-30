@@ -3,10 +3,10 @@
 import { Facebook, Instagram } from "lucide-react";
 
 import Image from "next/image";
-import qrCode from "@/public/qr-code.png";
-import yedab from "@/public/yedab.png";
-import ielts from "@/public/ielts.png";
-import pearson from "@/public/pearson.png";
+import qrCode from "@/public/footer/qr-code.png";
+import yedab from "@/public/footer/yedab.png";
+import ielts from "@/public/footer/ielts.png";
+import pearson from "@/public/footer/pearson.png";
 import Link from "next/link";
 
 import { Button } from "@/components/button";
