@@ -23,7 +23,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
         <Logo />
       </header>
 
-      {children}
+      <main> {children} </main>
 
       <Footer />
     </div>
