@@ -34,8 +34,7 @@ export default function Home() {
         />
         <div className="absolute top-0 p-10 md:ml-10 md:w-[400px] h-full w-full text-center space-y-6 bg-zinc-800/60">
           <h1 className="font-semibold md:text-3xl text-2xl text-white">
-            {" "}
-            Today&apos; students, tomorrow&apos; leaders{" "}
+            Today&apos;s students, tomorrow&apos;s leaders
           </h1>
           <Button label="Check our students ->" href="references" />
         </div>
