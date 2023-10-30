@@ -5,8 +5,6 @@ import { usePathname, useRouter } from "next/navigation";
 
 const routes = [
   { label: "Home Page", href: "/" },
-  { label: "Language Price Offer", href: "/language-price-offer" },
-  { label: "University Price Offer", href: "/university-price-offer" },
   { label: "Programmes", href: "/programmes" },
   { label: "Countries", href: "/countries" },
   { label: "Gallery", href: "/gallery" },
@@ -15,12 +13,17 @@ const routes = [
   { label: "Contact us", href: "/contact-us" },
 ];
 
-interface NavbarItemProps {
+const modals = [
+  { label: "Language Price Offer", href: "/language-price-offer" },
+  { label: "University Price Offer", href: "/university-price-offer" },
+];
+
+interface ItemProps {
   label: string;
   href: string;
 }
 
-const NavbarItem = ({ label, href }: NavbarItemProps) => {
+const NavbarItem = ({ label, href }: ItemProps) => {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -41,14 +44,25 @@ const NavbarItem = ({ label, href }: NavbarItemProps) => {
   );
 };
 
-export const Navbar = () => {
-  const pathname = usePathname();
+const ModalItem = ({ label, href }: ItemProps) => {
+  <button type="button">
+    {label} {/* TODO: create modals */}
+  </button>;
+};
 
+export const Navbar = () => {
   return (
-    <div className="pt-10 flex flex-col items-start md:flex-row">
-      {routes.map((route) => (
-        <NavbarItem label={route.label} href={route.href} key={route.href} />
-      ))}
+    <div className="flex flex-col">
+      <div className="pt-10 flex flex-col items-start md:flex-row">
+        {routes.map((route) => (
+          <NavbarItem label={route.label} href={route.href} key={route.href} />
+        ))}
+      </div>
+      <div className="flex flex-row space-x-3 justify-end">
+        {modals.map((modal) => (
+          <div key={modal.href}> {modal.label} </div>
+        ))}
+      </div>
     </div>
   );
 };
