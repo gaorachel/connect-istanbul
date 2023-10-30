@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { ReactNode } from "react";
 
 const Logo = () => {
-  return <Image src="/logo.png" width={300} height={100} alt="Connect Logo" className="object-contain pl-5 m-auto" />;
+  return <Image src="/logo.png" width={300} height={100} alt="Connect Logo" className="object-contain m-auto md:m-0" />;
 };
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
@@ -16,14 +16,14 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
         <Navbar />
       </header>
 
-      <header className="md:hidden">
-        <div className="p-4">
+      <header className="md:hidden items-center">
+        <div className="p-2 pl-4">
           <MobileNavbar />
         </div>
         <Logo />
       </header>
 
-      {children}
+      <main> {children} </main>
 
       <Footer />
     </div>

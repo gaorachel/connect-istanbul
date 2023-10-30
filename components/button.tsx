@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils";
 
 import { VariantProps, cva } from "class-variance-authority";
 
-const buttonVariants = cva("p-4 px-8 font-semibold text-white hover:text-white", {
+const buttonVariants = cva("p-4 px-8 font-semibold text-white hover:text-white transition border-2 rounded-lg", {
   variants: {
     variant: {
-      light: "bg-white text-zinc-700 hover:bg-black hover:text-white",
-      dark: "bg-zinc-600 hover:bg-white hover:text-zinc-600",
+      light: "bg-white text-zinc-700 hover:bg-zinc-700 border-zinc-700",
+      dark: "bg-zinc-600 hover:bg-white hover:text-zinc-600 border",
       red: "bg-red-500 hover:bg-red-700",
     },
     type: {
