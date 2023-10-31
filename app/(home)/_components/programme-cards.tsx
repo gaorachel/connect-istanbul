@@ -43,7 +43,7 @@ export const ProgrammeCards = () => {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 px-24 p-10 gap-10 rounded-lg">
         {programmes.map((programme) => (
-          <ImageWithButtonCard label={programme.label} code={programme.code} />
+          <ImageWithButtonCard label={programme.label} code={programme.code} key={programme.code} />
         ))}
       </div>
     </div>
