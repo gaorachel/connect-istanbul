@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { ReactNode } from "react";
 
 const Logo = () => {
-  return <Image src="/logo.png" width={300} height={100} alt="Connect Logo" className="object-contain m-auto md:m-0" />;
+  return <Image src={logo} width={300} height={100} alt="Connect Logo" className="object-contain m-auto md:m-0" />;
 };
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
