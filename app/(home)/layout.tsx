@@ -1,8 +1,11 @@
+import Image from "next/image";
+import logo from "@/public/header/logo.png";
+
 import { Footer } from "@/app/(home)/_components/footer";
 import { MobileNavbar } from "@/app/(home)/_components/mobile-navbar";
 import { Navbar } from "@/app/(home)/_components/navbar";
-import Image from "next/image";
-import React, { ReactNode } from "react";
+
+import type { ReactNode } from "react";
 
 const Logo = () => {
   return <Image src={logo} width={300} height={100} alt="Connect Logo" className="object-contain m-auto md:m-0" />;
