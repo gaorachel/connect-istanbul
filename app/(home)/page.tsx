@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import hero1 from "@/public/home/hero1.jpg";
 import hero2 from "@/public/home/hero2.jpg";
 
 import { Button } from "@/components/button";
 import { Separator } from "@/components/ui/separator";
+import { Calculator } from "lucide-react";
+import { ProgrammeCards } from "./_components/programme-cards";
+
 const modals = [
   { label: "Check Language Course Fees ", href: "/language-price-Check" },
   { label: "Check University Tuition Fees", href: "/university-price-Check" },
@@ -35,7 +40,7 @@ export default function Home() {
         />
         <div className="absolute top-0 p-10 space-x-3 w-full h-full md:h-[200px] md:mt-24 bg-zinc-200/80">
           <h1 className="font-semibold md:text-3xl text-2xl text-center"> Your gateway to study overseas </h1>
-          <div className="p-14 md:p-10 flex flex-col md:flex-row cursor-pointer space-y-5 md:space-y-0 items-center md:justify-center md:gap-5">
+          <div className="p-8 md:p-10 flex flex-col md:flex-row cursor-pointer space-y-5 md:space-y-0 items-center md:justify-center md:gap-5">
             {modals.map((modal) => (
               <ModalItem key={modal.label} label={modal.label} />
             ))}
@@ -43,7 +48,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-[500px] bg-white"> place holder </div>
+      <div className="py-10">
+        <ProgrammeCards />
+      </div>
 
       <Separator />
 
