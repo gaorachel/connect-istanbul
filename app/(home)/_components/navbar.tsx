@@ -36,7 +36,7 @@ const NavbarItem = ({ label, href }: ItemProps) => {
       type="button"
       onClick={() => router.push(href)}
       className={cn(
-        "p-3 text-md font-semibold text-zinc-500 hover:text-zinc-800",
+        "p-3 md:pb-2 md:mb-1 md:mr-2 text-md font-semibold text-zinc-500 hover:text-zinc-800",
         isActive &&
           "text-zinc-800 border-red-400 w-full bg-red-200/20 md:border-b-4 md:border-r-0 border-r-4 md:w-auto md:bg-transparent"
       )}
