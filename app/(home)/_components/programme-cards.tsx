@@ -15,7 +15,7 @@ const programmes = [
   },
   {
     label: "Postgraduate",
-    code: "Postgraduate",
+    code: "postgraduate",
   },
   {
     label: "High Schools",
