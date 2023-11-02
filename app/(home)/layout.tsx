@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import logo from "@/public/header/logo.png";
 
@@ -8,7 +11,18 @@ import { Navbar } from "@/app/(home)/_components/navbar";
 import type { ReactNode } from "react";
 
 const Logo = () => {
-  return <Image src={logo} width={300} height={100} alt="Connect Logo" className="object-contain m-auto md:m-0" />;
+  const router = useRouter();
+
+  return (
+    <Image
+      src={logo}
+      width={300}
+      height={100}
+      alt="Connect Logo"
+      className="object-contain m-auto md:m-0 cursor-pointer"
+      onClick={() => router.push("/")}
+    />
+  );
 };
 
 const AppLayout = ({ children }: { children: ReactNode }) => {

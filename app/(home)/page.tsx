@@ -8,6 +8,7 @@ import { Button } from "@/components/button";
 import { Separator } from "@/components/ui/separator";
 import { Calculator } from "lucide-react";
 import { ProgrammeCards } from "./_components/programme-cards";
+import { CountryCards } from "./_components/country-cards";
 
 const modals = [
   { label: "Check Language Course Fees ", href: "/language-price-Check" },
@@ -69,7 +70,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-[500px] bg-white"> place holder </div>
+      <div className="py-10">
+        <CountryCards />
+      </div>
     </>
   );
 }
