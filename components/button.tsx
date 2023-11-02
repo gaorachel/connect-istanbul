@@ -25,7 +25,7 @@ const buttonVariants = cva("p-4 px-8 font-semibold text-white hover:text-white t
 
 type ButtonVariantsProps = VariantProps<typeof buttonVariants>;
 
-interface ButtonProps {
+export interface ButtonProps {
   label: string;
   href: string;
   customisedStyle?: string;

@@ -1,15 +1,17 @@
-import { ImageWithButtonCard } from "./image-with-button-card";
+import { ImageCard } from "./image-card";
 
 const programmes = [
   {
     label: "Summer Schools",
     code: "summer-schools",
     type: "Short term",
+    tag: "popular",
   },
   {
     label: "Language Schools",
     code: "language-schools",
     type: "Short term",
+    tag: "popular",
   },
   {
     label: "Undergraduate",
@@ -51,12 +53,7 @@ export const ProgrammeCards = () => {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 px-24 p-10 gap-10 rounded-lg">
         {programmes.map((programme) => (
-          <ImageWithButtonCard
-            label={programme.label}
-            code={programme.code}
-            type={programme.type}
-            key={programme.code}
-          />
+          <ImageCard {...programme} key={programme.code} />
         ))}
       </div>
     </div>
