@@ -14,7 +14,7 @@ const countries = [
   },
   {
     label: "Scotland",
-    code: "Scotland",
+    code: "scotland",
     type: "location",
   },
   {
