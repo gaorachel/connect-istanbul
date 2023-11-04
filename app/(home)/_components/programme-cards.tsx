@@ -34,8 +34,8 @@ const programmes = [
     type: "Short term",
   },
   {
-    label: "50+ Programmes",
-    code: "50plus-programmes",
+    label: "Elderly Programmes",
+    code: "elderly-programmes",
     type: "Short term",
   },
   {
