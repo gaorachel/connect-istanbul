@@ -1,15 +1,22 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface ImageCardProps {
   label: string;
   code: string;
   type: string;
+  slug: string;
   tag?: string;
 }
 
-export const ImageCard = ({ label, code, type, tag }: ImageCardProps) => {
+export const ImageCard = ({ label, code, type, slug, tag }: ImageCardProps) => {
+  const router = useRouter();
+
   return (
-    <div className="rounded-xl flex flex-col shadow-xl h-[350px] w-[300px] cursor-pointer hover:-translate-y-5 transition-all">
+    <div
+      onClick={() => router.push(`/${slug}/${code}`)}
+      className="rounded-xl flex flex-col shadow-xl h-[350px] w-[300px] cursor-pointer hover:-translate-y-5 transition-all"
+    >
       <Image src={`/home/${code}.jpg`} alt={label} height={300} width={300} className="rounded-t-xl h-[220px] w-auto" />
       <p className="p-4 py-4 text-sm text-red-400 font-semibold"> {type.toUpperCase()} </p>
       <div className="flex flex-row gap-2">
