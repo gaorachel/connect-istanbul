@@ -1,13 +1,22 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { Instagram, Facebook } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import { useState } from "react";
+
+import { cn } from "@/lib/utils";
+
+import { Instagram, Facebook, Sun, LucideIcon } from "lucide-react";
+import { programmes } from "./programme-cards";
+import { Menu } from "./menu";
+
+const programmeItems = programmes.map((programme) => {
+  return { label: programme.label, code: programme.code };
+});
 
 const routes = [
   { label: "Home Page", href: "/" },
-  { label: "Programmes", href: "/programmes" },
+  { label: "Programmes", href: "/programmes", items: programmeItems },
   { label: "Countries", href: "/countries" },
   { label: "Gallery", href: "/gallery" },
   { label: "References", href: "/references" },
@@ -18,26 +27,43 @@ const routes = [
 interface NavbarItemProps {
   label: string;
   href: string;
+  items?: {
+    label: string;
+    code: string;
+  }[];
 }
 
-const NavbarItem = ({ label, href }: NavbarItemProps) => {
+const NavbarItem = ({ label, href, items }: NavbarItemProps) => {
+  const [isHovered, setIsHovered] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
   const isActive = (pathname === "/" && href === "/") || pathname === href || pathname?.startsWith(`${href}/`);
 
   return (
-    <button
-      type="button"
-      onClick={() => router.push(href)}
-      className={cn(
-        "p-3 md:pb-2 text-md font-semibold text-zinc-500 hover:text-zinc-800",
-        isActive &&
-          "text-zinc-800 border-red-400 w-full bg-red-200/20 md:border-b-4 md:border-r-0 border-r-4 md:w-auto md:bg-transparent"
-      )}
+    <div
+      className="relative flex flex-col w-full md:w-auto"
+      onMouseEnter={() => setIsHovered(!isHovered)}
+      onMouseLeave={() => setIsHovered(!isHovered)}
     >
-      {label}
-    </button>
+      <button
+        type="button"
+        onClick={() => router.push(href)}
+        className={cn(
+          "p-3 px-5 md:pb-2 text-md font-semibold text-zinc-500 hover:text-zinc-800 text-left",
+          isActive &&
+            "text-zinc-800 border-red-400 bg-red-200/20 md:border-b-4 md:border-r-0 border-r-4 md:w-auto md:bg-transparent"
+        )}
+      >
+        {label}
+      </button>
+
+      {items && isHovered && (
+        <div className="absolute z-50 py-5">
+          <Menu items={items!} href={href} />
+        </div>
+      )}
+    </div>
   );
 };
 
@@ -46,7 +72,7 @@ export const Navbar = () => {
     <div className="flex flex-col md:mr-5">
       <div className="pt-10 md:pt-3 flex flex-col items-start md:flex-row">
         {routes.map((route) => (
-          <NavbarItem label={route.label} href={route.href} key={route.href} />
+          <NavbarItem {...route} key={route.href} />
         ))}
       </div>
 
