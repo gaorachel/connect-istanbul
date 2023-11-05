@@ -37,7 +37,6 @@ export default function Home() {
           alt="graduation celebration"
           src={hero1}
           className="-z-50  w-full h-auto md:h-[400px] overflow-hidden object-cover"
-          // placeholder="blur"
         />
         <div className="absolute top-0 p-10 space-x-3 w-full h-full md:h-[200px] md:mt-24 bg-zinc-200/80">
           <h1 className="font-semibold md:text-3xl text-2xl text-center"> Your gateway to study overseas </h1>
@@ -60,7 +59,6 @@ export default function Home() {
           alt="London Big Ben & Westminster Palace"
           src={hero2}
           className="-z-50 w-full h-auto md:h-[400px] overflow-hidden object-cover"
-          // placeholder="blur"
         />
         <div className="absolute top-0 p-10 md:ml-10 md:w-[400px] h-full w-full text-center space-y-6 bg-zinc-800/60">
           <h1 className="font-semibold md:text-3xl text-2xl text-white">
