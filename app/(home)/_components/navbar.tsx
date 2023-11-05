@@ -46,9 +46,8 @@ const NavbarItem = ({ label, href, items }: NavbarItemProps) => {
       onMouseEnter={() => setIsHovered(!isHovered)}
       onMouseLeave={() => setIsHovered(!isHovered)}
     >
-      <button
-        type="button"
-        onClick={() => router.push(href)}
+      <Link
+        href={href}
         className={cn(
           "p-3 px-5 md:pb-2 text-md font-semibold text-zinc-500 hover:text-zinc-800 text-left",
           isActive &&
@@ -56,7 +55,7 @@ const NavbarItem = ({ label, href, items }: NavbarItemProps) => {
         )}
       >
         {label}
-      </button>
+      </Link>
 
       {items && isHovered && (
         <div className="absolute z-50 py-5">
