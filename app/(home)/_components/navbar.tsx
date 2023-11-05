@@ -1,14 +1,17 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import { useMediaQuery } from "@react-hook/media-query";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+
+import { MobileNavMenu } from "./mobile-nav-menu";
+import { NavMenu } from "./nav-menu";
+import { programmes } from "./programme-cards";
 
 import { cn } from "@/lib/utils";
 
-import { Instagram, Facebook } from "lucide-react";
-import { programmes } from "./programme-cards";
-import { NavMenu } from "./nav-menu";
+import { Instagram, Facebook, ChevronDown, ChevronRight } from "lucide-react";
 
 const programmeItems = programmes.map((programme) => {
   return { label: programme.label, code: programme.code };
@@ -34,16 +37,20 @@ interface NavbarItemProps {
 }
 
 const NavbarItem = ({ label, href, items }: NavbarItemProps) => {
+  const isMediumDevice = useMediaQuery("only screen and (min-width: 768px)");
   const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   const pathname = usePathname();
 
   const isActive = (pathname === "/" && href === "/") || pathname === href || pathname?.startsWith(`${href}/`);
 
   return (
     <div
-      className="relative flex flex-col w-full md:w-auto"
+      className="md:relative flex flex-col w-full md:w-auto"
       onMouseEnter={() => setIsHovered(!isHovered)}
       onMouseLeave={() => setIsHovered(!isHovered)}
+      onClick={() => setIsOpen(!isOpen)}
     >
       <Link
         href={href}
@@ -53,14 +60,20 @@ const NavbarItem = ({ label, href, items }: NavbarItemProps) => {
             "text-zinc-800 border-red-400 bg-red-200/20 md:border-b-4 md:border-r-0 border-r-4 md:w-auto md:bg-transparent"
         )}
       >
-        {label}
+        <div className="flex flex-row justify-between md:gap-2">
+          {label}
+          {!!items && !isMediumDevice && (isOpen ? <ChevronDown size={20} /> : <ChevronRight size={20} />)}
+          {!!items && isMediumDevice && <ChevronDown size={20} />}
+        </div>
       </Link>
 
-      {items && isHovered && (
-        <div className="absolute z-50 py-5">
+      {isMediumDevice && items && isHovered && (
+        <div className="md:absolute md:z-50 py-5">
           <NavMenu items={items!} href={href} />
         </div>
       )}
+
+      {!isMediumDevice && items && isOpen && <MobileNavMenu items={items!} href={href} />}
     </div>
   );
 };
