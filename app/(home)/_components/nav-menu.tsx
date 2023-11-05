@@ -10,7 +10,7 @@ interface NavMenuProps {
 
 export const NavMenu = ({ items, href }: NavMenuProps) => {
   return (
-    <div className="my-10 p-2 px-4 bg-zinc-100 w-[200px] space-y-2">
+    <div className="my-10 p-2 px-4 bg-zinc-100 w-[200px] space-y-2 flex flex-col">
       {items.map((item) => (
         <Link
           key={item.code}

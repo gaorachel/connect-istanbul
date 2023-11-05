@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { Instagram, Facebook, Sun, LucideIcon } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import { programmes } from "./programme-cards";
 import { NavMenu } from "./nav-menu";
 
@@ -36,7 +36,6 @@ interface NavbarItemProps {
 const NavbarItem = ({ label, href, items }: NavbarItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
 
   const isActive = (pathname === "/" && href === "/") || pathname === href || pathname?.startsWith(`${href}/`);
 
@@ -69,7 +68,7 @@ const NavbarItem = ({ label, href, items }: NavbarItemProps) => {
 export const Navbar = () => {
   return (
     <div className="flex flex-col md:mr-5">
-      <div className="pt-10 md:pt-3 flex flex-col items-start md:flex-row">
+      <div className="pt-10 md:pt-3 flex flex-col items-start md:flex-row md:gap-5">
         {routes.map((route) => (
           <NavbarItem {...route} key={route.href} />
         ))}
