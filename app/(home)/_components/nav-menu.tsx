@@ -1,7 +1,7 @@
 import { LucideIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-interface MenuProps {
+interface NavMenuProps {
   items: {
     label: string;
     code: string;
@@ -9,7 +9,7 @@ interface MenuProps {
   href: string;
 }
 
-export const Menu = ({ items, href }: MenuProps) => {
+export const NavMenu = ({ items, href }: NavMenuProps) => {
   const router = useRouter();
 
   return (

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 import { Instagram, Facebook, Sun, LucideIcon } from "lucide-react";
 import { programmes } from "./programme-cards";
-import { Menu } from "./menu";
+import { NavMenu } from "./nav-menu";
 
 const programmeItems = programmes.map((programme) => {
   return { label: programme.label, code: programme.code };
@@ -60,7 +60,7 @@ const NavbarItem = ({ label, href, items }: NavbarItemProps) => {
 
       {items && isHovered && (
         <div className="absolute z-50 py-5">
-          <Menu items={items!} href={href} />
+          <NavMenu items={items!} href={href} />
         </div>
       )}
     </div>
