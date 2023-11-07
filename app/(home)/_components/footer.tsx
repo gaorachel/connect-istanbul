@@ -17,7 +17,7 @@ export const Footer = () => {
       <div className="p-5 m-auto">
         <Button label="Contact us ->" href="contact-us" variant="light" type="button" />
       </div>
-      <div className="p-2 flex flex-col md:flex-row space-0  md:space-x-8 justify-center items-center bg-zinc-100 md:h-[200px]">
+      <div className="p-2 flex flex-col md:flex-row space-0  md:space-x-8 justify-center items-center bg-gradient-to-r from-zinc-100 to-white md:h-[200px]">
         <Image src={qrCode} alt="QR CODE" className="h-[100px] md:h-[150px] w-auto" />
         <Image src={yedab} alt="YEDAB logo" className="h-[100px] md:h-[200px] w-auto" />
         <Image src={ielts} alt="IELTS logo" className="h-[100px] md:h-[200px] w-auto" />
