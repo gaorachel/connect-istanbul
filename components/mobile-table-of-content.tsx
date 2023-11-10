@@ -22,12 +22,12 @@ export const MobileTableOfContent = ({ items, slug }: MobileTableOfContentProps)
   const selectedItem = pathname.split("/").pop();
 
   return (
-    <div className="space-y-2">
+    <div className="bg-zinc-50">
       <span className="flex flex-row gap-2 w-full border-y p-2 px-4 m-0 text-lg" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <ChevronDown /> : <ChevronRight />} Table of Content
       </span>
 
-      <div className="space-y-3 px-6">
+      <div className={cn(isOpen && "py-2 space-y-3 px-12 h-[200px] overflow-auto border-b border-zinc-200")}>
         {isOpen &&
           items.map((item) => (
             <Link
