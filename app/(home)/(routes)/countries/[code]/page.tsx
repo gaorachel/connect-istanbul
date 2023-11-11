@@ -126,6 +126,8 @@ const mainCountries = countries.map(({ label, code, desc }) => ({ label, code, d
 const allCountries = [...mainCountries, ...otherCountries];
 
 export const sortedAllCountries = allCountries.sort((a, b) => a.label.localeCompare(b.label));
+
+export default function CountryPage() {
   const pathname = usePathname();
 
   const currentCountry = pathname.split("/").pop();
