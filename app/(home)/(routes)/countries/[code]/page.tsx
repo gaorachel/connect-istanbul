@@ -123,14 +123,14 @@ const otherCountries = [
 
 const mainCountries = countries.map(({ label, code, desc }) => ({ label, code, desc }));
 
-export const allCountries = [...mainCountries, ...otherCountries];
+const allCountries = [...mainCountries, ...otherCountries];
 
-export default function countryPage() {
+export const sortedAllCountries = allCountries.sort((a, b) => a.label.localeCompare(b.label));
   const pathname = usePathname();
 
   const currentCountry = pathname.split("/").pop();
 
-  const country = allCountries.find((country) => country.code === currentCountry);
+  const country = sortedAllCountries.find((country) => country.code === currentCountry);
 
   return (
     <div className="p-5 px-7 md:p-14">
