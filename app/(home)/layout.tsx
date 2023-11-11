@@ -16,10 +16,9 @@ const Logo = () => {
   return (
     <Image
       src={logo}
-      width={300}
-      height={100}
       alt="Connect Logo"
-      className="object-contain m-auto md:m-0 cursor-pointer"
+      priority
+      className="object-contain m-auto md:m-0 cursor-pointer w-[300px] h-[140px]"
       onClick={() => router.push("/")}
     />
   );
