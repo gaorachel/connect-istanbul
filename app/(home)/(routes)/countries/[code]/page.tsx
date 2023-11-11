@@ -137,7 +137,7 @@ export default function CountryPage() {
   return (
     <div className="p-5 px-7 md:p-14">
       <h1 className="pb-2 md:py-8 text-xl md:text-4xl font-semibold">{country!.label.toUpperCase()}</h1>
-      <p className="md:text-lg text-zinc-500"> {country!.desc} </p>
+      <p className="md:text-lg text-zinc-500 whitespace-pre-line"> {country!.desc} </p>
     </div>
   );
 }
