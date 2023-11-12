@@ -9,7 +9,7 @@ const buttonVariants = cva("p-4 px-8 font-semibold text-white hover:bg-zinc-200 
   variants: {
     variant: {
       light: "bg-white text-zinc-700 border-zinc-700",
-      dark: "bg-zinc-600  hover:text-zinc-600",
+      dark: "bg-zinc-500 hover:text-zinc-600",
       red: "bg-red-500 hover:bg-red-700",
     },
     type: {

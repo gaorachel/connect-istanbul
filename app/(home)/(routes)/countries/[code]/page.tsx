@@ -1,6 +1,6 @@
 "use client";
 
-import { sortedAllCountries } from "../_data/dummy";
+import { sortedAllCountries } from "../_data/countryInfo";
 import { usePathname } from "next/navigation";
 
 export default function CountryPage() {

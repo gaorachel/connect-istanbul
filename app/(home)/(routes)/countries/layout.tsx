@@ -2,7 +2,7 @@
 
 import { useMediaQuery } from "@react-hook/media-query";
 
-import { sortedAllCountries } from "./_data/dummy";
+import { sortedAllCountries } from "./_data/countryInfo";
 import { MobileMenu } from "@/components/mobile-menu";
 import { Menu } from "@/components/menu";
 

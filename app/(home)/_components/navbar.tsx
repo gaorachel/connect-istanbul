@@ -7,7 +7,7 @@ import { useState } from "react";
 
 import { MobileNavMenu } from "./mobile-nav-menu";
 import { NavMenu } from "./nav-menu";
-import { programmes } from "./programme-cards";
+import { programmes } from "../(routes)/programmes/_data/programmeInfo";
 
 import { cn } from "@/lib/utils";
 

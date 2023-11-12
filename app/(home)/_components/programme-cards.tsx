@@ -1,49 +1,12 @@
 import { ImageCard } from "./image-card";
 
-export const programmes = [
-  {
-    label: "Summer Schools",
-    code: "summer-schools",
-    type: "Short term",
-    tag: "popular",
-  },
-  {
-    label: "Language Schools",
-    code: "language-schools",
-    type: "Short term",
-    tag: "popular",
-  },
-  {
-    label: "Undergraduate",
-    code: "undergraduate",
-    type: "Long term",
-  },
-  {
-    label: "Postgraduate",
-    code: "postgraduate",
-    type: "Long term",
-  },
-  {
-    label: "High Schools",
-    code: "high-schools",
-    type: "Long term",
-  },
-  {
-    label: "CELTA",
-    code: "celta",
-    type: "Short term",
-  },
-  {
-    label: "Elderly Programmes",
-    code: "elderly-programmes",
-    type: "Short term",
-  },
-  {
-    label: "Gallery",
-    code: "gallery",
-    type: "References",
-  },
-];
+import { programmes } from "../(routes)/programmes/_data/programmeInfo";
+
+const gallery = {
+  label: "Gallery",
+  code: "gallery",
+  type: "References",
+};
 
 export const ProgrammeCards = () => {
   return (
@@ -55,6 +18,8 @@ export const ProgrammeCards = () => {
         {programmes.map((programme) => (
           <ImageCard {...programme} key={programme.code} slug="programmes" />
         ))}
+
+        <ImageCard {...gallery} slug="gallery" />
       </div>
     </div>
   );

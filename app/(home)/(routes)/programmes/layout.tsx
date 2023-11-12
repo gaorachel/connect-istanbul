@@ -1,6 +1,6 @@
 "use client";
 
-import { programmes } from "../../_components/programme-cards";
+import { programmes } from "./_data/programmeInfo";
 import { Menu } from "../../../../components/menu";
 
 import type { ReactNode } from "react";

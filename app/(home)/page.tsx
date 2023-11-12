@@ -70,7 +70,7 @@ export default function Home() {
       <div className="py-10 flex flex-col">
         <CountryCards />
         <div className="p-5 md:p-10 m-auto">
-          <Button label="Learn more ->" href="countries" variant={"dark"} />
+          <Button label="Learn more ->" href="countries" variant={"red"} />
         </div>
       </div>
     </>
