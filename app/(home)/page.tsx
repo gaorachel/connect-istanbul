@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { Calculator } from "lucide-react";
 import { ProgrammeCards } from "./_components/programme-cards";
 import { CountryCards } from "./_components/country-cards";
+import Link from "next/link";
 
 const modals = [
   { label: "Check Language Course Fees ", href: "/language-price-Check" },
@@ -52,8 +53,6 @@ export default function Home() {
         <ProgrammeCards />
       </div>
 
-      <Separator />
-
       <div className="relative">
         <Image
           alt="London Big Ben & Westminster Palace"
@@ -68,8 +67,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-10">
+      <div className="py-10 flex flex-col">
         <CountryCards />
+        <div className="p-5 md:p-10 m-auto">
+          <Button label="Learn more ->" href="countries" variant={"dark"} />
+        </div>
       </div>
     </>
   );

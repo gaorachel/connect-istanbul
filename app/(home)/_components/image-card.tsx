@@ -17,7 +17,13 @@ export const ImageCard = ({ label, code, type, slug, tag }: ImageCardProps) => {
       onClick={() => router.push(`/${slug}/${code}`)}
       className="rounded-xl flex flex-col shadow-xl h-[350px] w-[300px] cursor-pointer hover:-translate-y-5 transition-all"
     >
-      <Image src={`/home/${code}.jpg`} alt={label} height={300} width={300} className="rounded-t-xl h-[220px] w-auto" />
+      <Image
+        src={`/home/${code}.jpg`}
+        alt={label}
+        height={500}
+        width={500}
+        className="rounded-t-xl h-[220px] w-[400px]"
+      />
       <p className="p-4 py-4 text-sm text-red-400 font-semibold"> {type.toUpperCase()} </p>
       <div className="flex flex-row gap-2">
         <h2 className="pl-4 px-auto text-xl font-semibold flex flex-row gap-2">{label}</h2>

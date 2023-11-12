@@ -4,9 +4,8 @@ import Link from "next/link";
 
 import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
 import { useMediaQuery } from "@react-hook/media-query";
-import Image from "next/image";
 
-export default function ContactUs() {
+export default function ContactUsPage() {
   const contactOptions = [
     {
       label: "Phone: +90 216 688 64 46",

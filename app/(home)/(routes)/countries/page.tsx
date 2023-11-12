@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function ProgrammesPage() {
-  return <div>ProgrammesPage</div>;
+export default function CountriesPage() {
+  return <div>CountriesPage</div>;
 }
