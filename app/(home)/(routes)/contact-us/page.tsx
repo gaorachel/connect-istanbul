@@ -4,9 +4,8 @@ import Link from "next/link";
 
 import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
 import { useMediaQuery } from "@react-hook/media-query";
-import { FacebookEmbed, InstagramEmbed } from "react-social-media-embed";
 
-export default function ContactUs() {
+export default function ContactUsPage() {
   const contactOptions = [
     {
       label: "Phone: +90 216 688 64 46",
@@ -74,7 +73,6 @@ export default function ContactUs() {
           loading="lazy"
         ></iframe>
       </div>
-      <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" width={550} />
     </div>
   );
 }
