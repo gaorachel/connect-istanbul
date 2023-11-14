@@ -67,8 +67,6 @@ export const ImageSlider = ({ images, name }: ImageSliderProps) => {
             onClick={() => goToImage(index)}
             src={image.src}
             alt={`${name} - ${index}`}
-            // width={isMediumDevice ? 500 : 300}
-            // height={isMediumDevice ? 500 : 400}
             key={index}
             className={cn(
               index === shownImageIndex
