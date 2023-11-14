@@ -107,7 +107,7 @@ export default function GalleryPage() {
   ];
 
   return (
-    <div className="m-auto w-[500px] md:w-[1000px]">
+    <div className="m-auto w-[500px] md:w-[1200px]">
       {trips.map((trip, index) => (
         <div key={index} className="p-5 md:p-10 md:px-20 flex flex-col space-y-1 md:space-y-3 ">
           <div className="flex flex-row items-baseline gap-2 md:pl-16">

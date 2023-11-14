@@ -59,7 +59,7 @@ export const ImageSlider = ({ images, name }: ImageSliderProps) => {
       <div className="flex flex-row m-auto items-center space-y-2">
         <ChevronLeft
           onClick={handleClickPrevImage}
-          className="bg-zinc-200 hover:bg-zinc-400/80 transition cursor-pointer rounded-full"
+          className="m-2 bg-zinc-200 hover:bg-zinc-400/80 transition cursor-pointer rounded-full select-none"
           size={45}
         />
         {images.map((image, index) => (
@@ -80,7 +80,7 @@ export const ImageSlider = ({ images, name }: ImageSliderProps) => {
         ))}
         <ChevronRight
           onClick={handleClickNextImage}
-          className="bg-zinc-200 hover:bg-zinc-400/80 transition cursor-pointer rounded-full"
+          className="m-2 bg-zinc-200 hover:bg-zinc-400/80 transition cursor-pointer rounded-full select-none"
           size={45}
         />
       </div>
