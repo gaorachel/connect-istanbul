@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 
-import { ChevronLeft, ChevronRight, Circle, Dot } from "lucide-react";
+import { ChevronLeft, ChevronRight, Dot } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@react-hook/media-query";
 
@@ -15,8 +15,12 @@ interface ImageSliderProps {
 export const ImageSlider = ({ images, name }: ImageSliderProps) => {
   const [shownImageIndex, setShownImageIndex] = useState(0);
   const isMediumDevice = useMediaQuery("only screen and (min-width: 768px)");
+  const [userClicked, setUserClicked] = useState(false);
 
   const handleClickPrevImage = () => {
+    setUserClicked(true);
+    setTimeout(() => setUserClicked(false), 6000);
+
     const isFirstImage = shownImageIndex === 0;
     const newIndex = isFirstImage ? images.length - 1 : shownImageIndex - 1;
 
@@ -24,6 +28,9 @@ export const ImageSlider = ({ images, name }: ImageSliderProps) => {
   };
 
   const handleClickNextImage = () => {
+    setUserClicked(true);
+    setTimeout(() => setUserClicked(false), 6000);
+
     const isLastImage = shownImageIndex === images.length - 1;
     const nextIndex = isLastImage ? 0 : shownImageIndex + 1;
 
@@ -33,6 +40,19 @@ export const ImageSlider = ({ images, name }: ImageSliderProps) => {
   const goToImage = (imageIndex: number) => {
     setShownImageIndex(imageIndex);
   };
+
+  // Auto-play image
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (userClicked) return;
+
+      setShownImageIndex((curr) => (curr + 1) % images.length);
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [images.length, userClicked]);
 
   return (
     <div className="flex flex-col">
