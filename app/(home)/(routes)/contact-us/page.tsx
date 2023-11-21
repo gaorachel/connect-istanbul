@@ -35,7 +35,7 @@ export default function ContactUsPage() {
     <div className="flex flex-col md:flex-row p-5 md:p-10 md:pb-20 m-auto md:w-[1200px] w-[500px] md:space-x-10 min-h-full">
       <div>
         <h1 className="text-2xl md:text-4xl font-semibold pb-5"> Our Office </h1>
-        {/* <Image
+          <div className="flex flex-col">
           src="/contact-us/office.jpg"
           alt="Picture of office"
           placeholder="empty"
@@ -43,7 +43,6 @@ export default function ContactUsPage() {
           height={200}
           className="rounded-2xl"
         /> */}
-        <p className="flex flex-col">
           <span className="text-lg md:text-xl p-2 text-zinc-500"> İstanbul, TR </span>
           <p className="flex flex-row gap-x-2 p-2 text-sm md:text-md">
             <MapPin size={50} />
@@ -52,7 +51,7 @@ export default function ContactUsPage() {
               Ataşehir/İstanbul, Turkey
             </Link>
           </p>
-        </p>
+          </div>
 
         <h1 className="text-2xl md:text-4xl font-semibold py-5 md:pt-10"> Contact Us </h1>
         {contactOptions.map((option) => (
