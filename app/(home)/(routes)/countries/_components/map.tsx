@@ -6,10 +6,8 @@ type MapProps = {
   height: number;
   data: FeatureCollection;
   connectionData: {
-    long1: number;
-    long2: number;
-    lat1: number;
-    lat2: number;
+    start: [number, number];
+    end: [number, number];
   }[];
 };
 
@@ -45,8 +43,8 @@ export const Map = ({ width, height, data, connectionData }: MapProps) => {
     const path = geoPathGenerator({
       type: "LineString",
       coordinates: [
-        [connection.long1, connection.lat1],
-        [connection.long2, connection.lat2],
+        [connection.start[0], connection.start[1]],
+        [connection.end[0], connection.end[1]],
       ],
     });
 
