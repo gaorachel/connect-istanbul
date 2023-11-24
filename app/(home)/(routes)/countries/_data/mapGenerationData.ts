@@ -11801,7 +11801,7 @@ export const data = {
     },
     {
       type: "Feature",
-      properties: { name: "Turkey" },
+      properties: { name: "Turkey" }, 
       geometry: {
         type: "MultiPolygon",
         coordinates: [

@@ -9,14 +9,11 @@ type MapProps = {
     start: [number, number];
     end: [number, number];
   }[];
+  className: string;
+  viewBox: string;
 };
 
-const CONNECTION_DATA = {
-  start: [2.3522, 48.8566], // Paris
-  end: [-74.006, 40.7128], // New York
-};
-
-export const Map = ({ width, height, data, connectionData }: MapProps) => {
+export const Map = ({ width, height, data, connectionData, className, viewBox }: MapProps) => {
   const projection = d3
     .geoMercator()
     .scale(width / 2 / Math.PI - 40)
@@ -33,7 +30,7 @@ export const Map = ({ width, height, data, connectionData }: MapProps) => {
           d={geoPathGenerator(shape) ?? undefined}
           stroke="lightGrey"
           strokeWidth={0.5}
-          fill="grey"
+          fill={shape!.properties!.name === "Turkey" ? "red" : "grey"}
           fillOpacity={0.7}
         />
       );
@@ -48,12 +45,12 @@ export const Map = ({ width, height, data, connectionData }: MapProps) => {
       ],
     });
 
-    return <path key={i} d={path ?? undefined} stroke="#cb1dd1" strokeWidth={2} fill="none" />;
+    return <path key={i} d={path ?? undefined} stroke="#FE5058" strokeWidth={2} fill="none" />;
   });
 
   return (
-    <div>
-      <svg width={width} height={height}>
+    <div className={className}>
+      <svg width={width} height={height} viewBox={viewBox}>
         {backgroundMapSvgElements}
         {connectionSvgElements}
       </svg>
