@@ -2,7 +2,7 @@
 
 import { Map } from "./_components/map";
 
-import { data } from "./_data/mapGenerationData";
+import { mapGenerationData } from "./_data/mapGenerationData";
 import { connectionData } from "./_data/connectionData";
 
 export default function CountriesPage() {
@@ -14,7 +14,7 @@ export default function CountriesPage() {
         <Map
           width={2000}
           height={600}
-          data={data}
+          mapGenerationData={mapGenerationData}
           connectionData={connectionData}
           className="overflow-hidden w-[1000px]"
           viewBox="450 -150 600 550"

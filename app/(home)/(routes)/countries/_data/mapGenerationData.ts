@@ -1,4 +1,6 @@
-export const data = {
+import { FeatureCollection, Geometry, GeoJsonProperties } from "geojson";
+
+export const mapGenerationData: FeatureCollection<Geometry, GeoJsonProperties> = {
   type: "FeatureCollection",
   features: [
     {
@@ -11801,7 +11803,7 @@ export const data = {
     },
     {
       type: "Feature",
-      properties: { name: "Turkey" }, 
+      properties: { name: "Turkey" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [

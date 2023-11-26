@@ -1,4 +1,9 @@
-export const connectionData = [
+export interface ConnectionType {
+  start: [number, number];
+  end: [number, number];
+}
+
+export const connectionData: ConnectionType[] = [
   { start: [32.8597, 39.9334], end: [2.3522, 48.8566] }, // Paris
   { start: [32.8597, 39.9334], end: [0.1276, 51.5072] }, // London
   { start: [32.8597, 39.9334], end: [13.405, 52.52] }, // Berlin

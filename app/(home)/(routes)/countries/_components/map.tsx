@@ -1,19 +1,18 @@
 import * as d3 from "d3";
-import { FeatureCollection } from "geojson";
+
+import { type FeatureCollection } from "geojson";
+import { type ConnectionType } from "../_data/connectionData";
 
 type MapProps = {
   width: number;
   height: number;
-  data: FeatureCollection;
-  connectionData: {
-    start: [number, number];
-    end: [number, number];
-  }[];
+  mapGenerationData: FeatureCollection;
+  connectionData: ConnectionType[];
   className: string;
   viewBox: string;
 };
 
-export const Map = ({ width, height, data, connectionData, className, viewBox }: MapProps) => {
+export const Map = ({ width, height, mapGenerationData, connectionData, className, viewBox }: MapProps) => {
   const projection = d3
     .geoMercator()
     .scale(width / 2 / Math.PI - 40)
@@ -21,13 +20,13 @@ export const Map = ({ width, height, data, connectionData, className, viewBox }:
 
   const geoPathGenerator = d3.geoPath().projection(projection);
 
-  const backgroundMapSvgElements = data.features
+  const backgroundMapSvgElements = mapGenerationData.features
     .filter((shape) => shape.id !== "ATA")
     .map((shape) => {
       return (
         <path
           key={shape.id}
-          d={geoPathGenerator(shape) ?? undefined}
+          d={geoPathGenerator(shape) || undefined}
           stroke="lightGrey"
           strokeWidth={0.5}
           fill={shape!.properties!.name === "Turkey" ? "red" : "grey"}
