@@ -15,7 +15,7 @@ interface MobileTableOfContentProps {
 }
 
 export const MobileMenu = ({ items, slug }: MobileTableOfContentProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const pathname = usePathname();
 
